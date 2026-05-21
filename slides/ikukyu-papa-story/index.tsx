@@ -19,7 +19,7 @@ export const design: DesignSystem = {
     accent: '#c97b63',
   },
   fonts: {
-    display: 'Georgia, "Hiragino Mincho ProN", "Yu Mincho", serif',
+    display: '"Hiragino Maru Gothic ProN", "Hiragino Sans", "Yu Gothic UI", system-ui, sans-serif',
     body: '-apple-system, BlinkMacSystemFont, "Hiragino Sans", "Segoe UI", sans-serif',
   },
   typeScale: { hero: 156, body: 38 },
