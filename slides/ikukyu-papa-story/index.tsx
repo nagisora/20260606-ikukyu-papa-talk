@@ -228,37 +228,13 @@ const Cover: Page = () => (
           marginBottom: 28,
         }}
       />
-      <p
-        style={{
-          fontSize: 28,
-          color: 'var(--osd-accent)',
-          letterSpacing: '0.14em',
-          fontWeight: 600,
-          margin: 0,
-        }}
-      >
-        体験談
-      </p>
       <h1
-        style={{
-          fontFamily: 'var(--osd-font-display)',
-          fontSize: 'var(--osd-size-hero)',
-          fontWeight: 800,
-          margin: '28px 0 36px',
-          lineHeight: 1.08,
-          maxWidth: 1000,
-        }}
+        style={{ fontFamily: 'var(--osd-font-display)', fontSize: '140px', fontWeight: 800, margin: '28px 0 36px', lineHeight: 1.08, maxWidth: 1000 }}
       >
         育休を取得した
         <br />
         パパの話
       </h1>
-      <p style={{ fontSize: 44, color: muted, margin: 0, lineHeight: 1.5 }}>
-        玉置 純也（たまき じゅんや）
-      </p>
-      <p style={{ fontSize: 32, color: muted, margin: '20px 0 0', lineHeight: 1.5 }}>
-        正直な現実と、乗り越え方
-      </p>
     </div>
     <div
       style={{
