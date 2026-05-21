@@ -38,7 +38,7 @@ const fill = {
   position: 'relative' as const,
 };
 
-const pad = 120;
+const pad = 100;
 
 const Illu = ({
   src,
@@ -113,14 +113,13 @@ const AlbumFrame = () => (
   />
 );
 
-const BulletList = ({ items, narrow }: { items: string[]; narrow?: boolean }) => (
+const BulletList = ({ items }: { items: string[] }) => (
   <ul
     style={{
       fontSize: 'var(--osd-size-body)',
       lineHeight: 1.55,
       margin: '48px 0 0',
       paddingLeft: 52,
-      maxWidth: narrow ? 920 : 1520,
     }}
   >
     {items.map((item) => (
@@ -182,7 +181,7 @@ const ContentPage = ({
         >
           {title}
         </h2>
-        <BulletList items={items} narrow={Boolean(illustration)} />
+        <BulletList items={items} />
       </div>
       {illustration ? (
         <div
@@ -229,7 +228,7 @@ const Cover: Page = () => (
         }}
       />
       <h1
-        style={{ fontFamily: 'var(--osd-font-display)', fontSize: '140px', fontWeight: 800, margin: '28px 0 36px', lineHeight: 1.08, maxWidth: 1000 }}
+        style={{ fontFamily: 'var(--osd-font-display)', fontSize: '140px', fontWeight: 800, margin: '28px 0 36px', lineHeight: 1.08 }}
       >
         育休を取得した
         <br />
@@ -287,15 +286,13 @@ const Opening: Page = () => (
             margin: '32px 0 0',
             padding: 0,
             border: 'none',
-            maxWidth: 1000,
           }}
         >
-          子育ては、地獄のように大変。
+          子育ては、ものすごーく大変。
           <br />
           でも天国のように幸せ。
         </blockquote>
         <BulletList
-          narrow
           items={[
             '子どもがいるのは本当に幸せ。だから頑張るしかない',
             'ものすごく大変な日も、たくさんある',
@@ -396,7 +393,7 @@ const SnsReality: Page = () => (
           <br />
           じゃない
         </h2>
-        <p style={{ fontSize: 'var(--osd-size-body)', lineHeight: 1.55, marginTop: 40, maxWidth: 720 }}>
+        <p style={{ fontSize: 'var(--osd-size-body)', lineHeight: 1.55, marginTop: 40 }}>
           SNSでは幸せそうな子育てがよく見える。でも大変なことも、本当にたくさんある。
         </p>
       </div>
@@ -492,14 +489,13 @@ const Closing: Page = () => (
         fontWeight: 800,
         margin: '24px 0 24px',
         lineHeight: 1.2,
-        maxWidth: 1400,
       }}
     >
       大変だけど、
       <br />
       一緒に頑張りましょう
     </h2>
-    <p style={{ fontSize: 36, color: muted, margin: 0, lineHeight: 1.55, maxWidth: 1100 }}>
+    <p style={{ fontSize: 36, color: muted, margin: 0, lineHeight: 1.55 }}>
       質問・感想・自分の話も、ぜひ聞かせてください
     </p>
     <p
