@@ -1,6 +1,6 @@
 import type { CSSProperties } from 'react';
 import type { DesignSystem, Page, SlideMeta } from '@open-slide/core';
-import { useSlidePageNumber } from '@open-slide/core';
+import { ImagePlaceholder, useSlidePageNumber } from '@open-slide/core';
 
 import illusBabyTimeline from './assets/illus-baby-timeline.svg';
 import illusCheer from './assets/illus-cheer.svg';
@@ -234,6 +234,13 @@ const Cover: Page = () => (
         <br />
         パパの話
       </h1>
+      <p style={{ fontSize: 36, color: muted, margin: '0 0 36px', lineHeight: 1.5 }}>
+        開始までしばらくお待ちください
+      </p>
+      <div style={{ display: 'flex', gap: 32 }}>
+        <ImagePlaceholder hint="QRコード 1" width={180} height={180} />
+        <ImagePlaceholder hint="QRコード 2" width={180} height={180} />
+      </div>
     </div>
     <div
       style={{
