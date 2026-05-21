@@ -30,3 +30,11 @@ pnpm sync:skills
 ```
 
 `pnpm dev` will also detect drift on startup and offer to sync. `pnpm sync:skills --dry-run` (via `pnpm exec open-slide sync:skills --dry-run`) previews changes without writing.
+
+## Cursor Cloud specific instructions
+
+- **Dev server**: `pnpm dev` — Vite ベースの開発サーバーが `http://localhost:5173/` で起動する。HMR 対応。
+- **Build**: `pnpm build` — `dist/` に静的ファイルを出力。チャンクサイズ警告が出るが正常動作。
+- **Lint / Test**: 本リポジトリには lint・test スクリプトが定義されていない。TypeScript (`tsc`) も直接の依存に含まれないため、型チェックは Vite のビルド時にのみ行われる。
+- **esbuild ビルドスクリプト警告**: `pnpm install` 時に esbuild と msw のビルドスクリプトが無視される旨の警告が出るが、開発に支障はない。
+- **外部サービス不要**: DB・API 等の外部依存なし。純粋なフロントエンドプロジェクト。
