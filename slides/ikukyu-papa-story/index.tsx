@@ -1,6 +1,6 @@
 import type { CSSProperties } from 'react';
 import type { DesignSystem, Page, SlideMeta } from '@open-slide/core';
-import { useSlidePageNumber } from '@open-slide/core';
+import { ImagePlaceholder, useSlidePageNumber } from '@open-slide/core';
 
 import illusBabyTimeline from './assets/illus-baby-timeline.svg';
 import illusCheer from './assets/illus-cheer.svg';
@@ -11,6 +11,7 @@ import illusRest from './assets/illus-rest.svg';
 import illusSns from './assets/illus-sns.svg';
 import doodleHeart from './assets/doodle-heart.svg';
 import doodleStar from './assets/doodle-star.svg';
+import qrNote from './assets/qr-note.png';
 
 export const design: DesignSystem = {
   palette: {
@@ -19,7 +20,7 @@ export const design: DesignSystem = {
     accent: '#c97b63',
   },
   fonts: {
-    display: 'Georgia, "Hiragino Mincho ProN", "Yu Mincho", serif',
+    display: '"Hiragino Maru Gothic ProN", "Hiragino Sans", "Yu Gothic UI", system-ui, sans-serif',
     body: '-apple-system, BlinkMacSystemFont, "Hiragino Sans", "Segoe UI", sans-serif',
   },
   typeScale: { hero: 156, body: 38 },
@@ -38,7 +39,9 @@ const fill = {
   position: 'relative' as const,
 };
 
-const pad = 120;
+const pad = 100;
+
+const aboveDecor = { position: 'relative' as const, zIndex: 2 };
 
 const Illu = ({
   src,
@@ -62,22 +65,22 @@ const DoodleDecor = () => (
     <Illu
       src={doodleHeart}
       width={44}
-      style={{ position: 'absolute', top: 100, right: 200, opacity: 0.85, transform: 'rotate(-12deg)' }}
+      style={{ position: 'absolute', top: 100, right: 200, opacity: 0.85, transform: 'rotate(-12deg)', zIndex: 1 }}
     />
     <Illu
       src={doodleStar}
       width={40}
-      style={{ position: 'absolute', top: 180, right: 120, opacity: 0.9, transform: 'rotate(8deg)' }}
+      style={{ position: 'absolute', top: 180, right: 120, opacity: 0.9, transform: 'rotate(8deg)', zIndex: 1 }}
     />
     <Illu
       src={doodleHeart}
       width={32}
-      style={{ position: 'absolute', bottom: 140, left: 90, opacity: 0.7, transform: 'rotate(18deg)' }}
+      style={{ position: 'absolute', bottom: 140, left: 90, opacity: 0.7, transform: 'rotate(18deg)', zIndex: 1 }}
     />
     <Illu
       src={doodleStar}
       width={36}
-      style={{ position: 'absolute', bottom: 200, left: 200, opacity: 0.75, transform: 'rotate(-6deg)' }}
+      style={{ position: 'absolute', bottom: 92, left: 200, opacity: 0.75, transform: 'rotate(-6deg)', zIndex: 1 }}
     />
   </>
 );
@@ -93,6 +96,7 @@ const PageFooter = () => {
         fontSize: 24,
         color: muted,
         letterSpacing: '0.08em',
+        zIndex: 3,
       }}
     >
       {String(current).padStart(2, '0')} / {String(total).padStart(2, '0')}
@@ -113,14 +117,13 @@ const AlbumFrame = () => (
   />
 );
 
-const BulletList = ({ items, narrow }: { items: string[]; narrow?: boolean }) => (
+const BulletList = ({ items }: { items: string[] }) => (
   <ul
     style={{
       fontSize: 'var(--osd-size-body)',
       lineHeight: 1.55,
       margin: '48px 0 0',
       paddingLeft: 52,
-      maxWidth: narrow ? 920 : 1520,
     }}
   >
     {items.map((item) => (
@@ -156,6 +159,7 @@ const ContentPage = ({
         gridTemplateColumns: illustration ? '1fr auto' : '1fr',
         gap: 32,
         alignItems: 'center',
+        ...aboveDecor,
       }}
     >
       <div>
@@ -182,7 +186,7 @@ const ContentPage = ({
         >
           {title}
         </h2>
-        <BulletList items={items} narrow={Boolean(illustration)} />
+        <BulletList items={items} />
       </div>
       {illustration ? (
         <div
@@ -217,7 +221,7 @@ const Cover: Page = () => (
   >
     <AlbumFrame />
     <DoodleDecor />
-    <div>
+    <div style={aboveDecor}>
       <div
         style={{
           width: 120,
@@ -228,37 +232,38 @@ const Cover: Page = () => (
           marginBottom: 28,
         }}
       />
-      <p
-        style={{
-          fontSize: 28,
-          color: 'var(--osd-accent)',
-          letterSpacing: '0.14em',
-          fontWeight: 600,
-          margin: 0,
-        }}
-      >
-        体験談
-      </p>
       <h1
-        style={{
-          fontFamily: 'var(--osd-font-display)',
-          fontSize: 'var(--osd-size-hero)',
-          fontWeight: 800,
-          margin: '28px 0 36px',
-          lineHeight: 1.08,
-          maxWidth: 1000,
-        }}
+        style={{ fontFamily: 'var(--osd-font-display)', fontSize: '140px', fontWeight: 800, margin: '28px 0 36px', lineHeight: 1.08 }}
       >
         育休を取得した
         <br />
         パパの話
       </h1>
-      <p style={{ fontSize: 44, color: muted, margin: 0, lineHeight: 1.5 }}>
-        玉置 純也（たまき じゅんや）
-      </p>
-      <p style={{ fontSize: 32, color: muted, margin: '20px 0 0', lineHeight: 1.5 }}>
-        正直な現実と、乗り越え方
-      </p>
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%', marginTop: 8 }}>
+        <div style={{ alignSelf: 'stretch' }}>
+          <p style={{ fontSize: 36, color: muted, margin: '0 0 16px', lineHeight: 1.5, textAlign: 'left' }}>
+            開始までしばらくお待ちください
+          </p>
+          <p style={{ fontSize: 32, color: muted, margin: '0 0 36px', lineHeight: 1.55, textAlign: 'left' }}>
+            良かったら私が生後から書いている「子育て体験note」などご覧ください
+          </p>
+        </div>
+        <div style={{ display: 'flex', gap: 300, alignItems: 'flex-start', transform: 'translateX(-80px)' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 12 }}>
+            <img
+              src={qrNote}
+              alt="子育てnote"
+              draggable={false}
+              style={{ width: 180, height: 180, display: 'block', borderRadius: 8 }}
+            />
+            <p style={{ fontSize: 28, color: muted, margin: 0, fontWeight: 600 }}>子育て体験note</p>
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 12 }}>
+            <ImagePlaceholder hint="本日の資料 QRコード" width={180} height={180} />
+            <p style={{ fontSize: 28, color: muted, margin: 0, fontWeight: 600 }}>本日の資料</p>
+          </div>
+        </div>
+      </div>
     </div>
     <div
       style={{
@@ -267,6 +272,7 @@ const Cover: Page = () => (
         padding: 36,
         border: `2px solid ${accentSoft}`,
         marginRight: 40,
+        ...aboveDecor,
       }}
     >
       <Illu src={illusFamily} width={380} />
@@ -288,6 +294,7 @@ const Opening: Page = () => (
         gridTemplateColumns: '1fr auto',
         gap: 40,
         alignItems: 'center',
+        ...aboveDecor,
       }}
     >
       <div>
@@ -311,15 +318,13 @@ const Opening: Page = () => (
             margin: '32px 0 0',
             padding: 0,
             border: 'none',
-            maxWidth: 1000,
           }}
         >
-          子育ては、地獄のように大変。
+          子育ては、ものすごーく大変。
           <br />
           でも天国のように幸せ。
         </blockquote>
         <BulletList
-          narrow
           items={[
             '子どもがいるのは本当に幸せ。だから頑張るしかない',
             'ものすごく大変な日も、たくさんある',
@@ -401,6 +406,7 @@ const SnsReality: Page = () => (
         gridTemplateColumns: '1fr 1fr',
         gap: 48,
         alignItems: 'center',
+        ...aboveDecor,
       }}
     >
       <div>
@@ -420,7 +426,7 @@ const SnsReality: Page = () => (
           <br />
           じゃない
         </h2>
-        <p style={{ fontSize: 'var(--osd-size-body)', lineHeight: 1.55, marginTop: 40, maxWidth: 720 }}>
+        <p style={{ fontSize: 'var(--osd-size-body)', lineHeight: 1.55, marginTop: 40 }}>
           SNSでは幸せそうな子育てがよく見える。でも大変なことも、本当にたくさんある。
         </p>
       </div>
@@ -497,6 +503,14 @@ const Closing: Page = () => (
     <DoodleDecor />
     <div
       style={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        ...aboveDecor,
+      }}
+    >
+    <div
+      style={{
         background: surface,
         borderRadius: 'var(--osd-radius)',
         padding: 28,
@@ -516,14 +530,13 @@ const Closing: Page = () => (
         fontWeight: 800,
         margin: '24px 0 24px',
         lineHeight: 1.2,
-        maxWidth: 1400,
       }}
     >
       大変だけど、
       <br />
       一緒に頑張りましょう
     </h2>
-    <p style={{ fontSize: 36, color: muted, margin: 0, lineHeight: 1.55, maxWidth: 1100 }}>
+    <p style={{ fontSize: 36, color: muted, margin: 0, lineHeight: 1.55 }}>
       質問・感想・自分の話も、ぜひ聞かせてください
     </p>
     <p
@@ -538,6 +551,7 @@ const Closing: Page = () => (
     >
       資料・詳細 → note
     </p>
+    </div>
     <PageFooter />
   </div>
 );
