@@ -239,22 +239,24 @@ const Cover: Page = () => (
         <br />
         パパの話
       </h1>
-      <p style={{ fontSize: 36, color: muted, margin: '0 0 36px', lineHeight: 1.5 }}>
-        開始までしばらくお待ちください
-      </p>
-      <div style={{ display: 'flex', gap: 32, alignItems: 'flex-start' }}>
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 12 }}>
-          <ImagePlaceholder hint="本日の資料 QRコード" width={180} height={180} />
-          <p style={{ fontSize: 28, color: muted, margin: 0, fontWeight: 600 }}>本日の資料</p>
-        </div>
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 12 }}>
-          <img
-            src={qrNote}
-            alt="子育てnote"
-            draggable={false}
-            style={{ width: 180, height: 180, display: 'block', borderRadius: 8 }}
-          />
-          <p style={{ fontSize: 28, color: muted, margin: 0, fontWeight: 600 }}>子育てnote</p>
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%', marginTop: 8 }}>
+        <p style={{ fontSize: 36, color: muted, margin: '0 0 36px', lineHeight: 1.5, textAlign: 'center' }}>
+          開始までしばらくお待ちください
+        </p>
+        <div style={{ display: 'flex', gap: 90, alignItems: 'flex-start' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 12 }}>
+            <ImagePlaceholder hint="本日の資料 QRコード" width={180} height={180} />
+            <p style={{ fontSize: 28, color: muted, margin: 0, fontWeight: 600 }}>本日の資料</p>
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 12 }}>
+            <img
+              src={qrNote}
+              alt="子育てnote"
+              draggable={false}
+              style={{ width: 180, height: 180, display: 'block', borderRadius: 8 }}
+            />
+            <p style={{ fontSize: 28, color: muted, margin: 0, fontWeight: 600 }}>子育て体験note</p>
+          </div>
         </div>
       </div>
     </div>
