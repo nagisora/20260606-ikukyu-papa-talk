@@ -80,7 +80,7 @@ const DoodleDecor = () => (
     <Illu
       src={doodleStar}
       width={36}
-      style={{ position: 'absolute', bottom: 200, left: 200, opacity: 0.75, transform: 'rotate(-6deg)', zIndex: 1 }}
+      style={{ position: 'absolute', bottom: 92, left: 200, opacity: 0.75, transform: 'rotate(-6deg)', zIndex: 1 }}
     />
   </>
 );
