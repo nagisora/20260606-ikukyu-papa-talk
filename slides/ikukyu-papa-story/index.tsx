@@ -322,7 +322,7 @@ const Opening: Page = () => (
         >
           子育ては、ものすごーく大変。
           <br />
-          でも天国のように幸せ。
+          でも、天国みたいに幸せ。
         </blockquote>
         <BulletList
           items={[
