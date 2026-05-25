@@ -1,4 +1,4 @@
-import type { CSSProperties } from 'react';
+import type { CSSProperties, ReactNode } from 'react';
 import type { DesignSystem, Page, SlideMeta } from '@open-slide/core';
 import { ImagePlaceholder, useSlidePageNumber } from '@open-slide/core';
 
@@ -12,6 +12,14 @@ import illusSns from './assets/illus-sns.svg';
 import doodleHeart from './assets/doodle-heart.svg';
 import doodleStar from './assets/doodle-star.svg';
 import qrNote from './assets/qr-note.png';
+
+export const notes: (string | undefined)[] = [
+  undefined,
+  `- 幸せなことの例：存在が可愛い、純粋な笑顔も素敵、成長に感動する、子どもいらないといっていたパパも今ではデレデレ
+- 大変なこと：エレベーターで一緒になったパパさんから「子育て大変ですよね」と話しかけられる、夫婦で育休取って何事もなく上手くいったという話を聞いたことない、
+- `,
+];
+
 
 export const design: DesignSystem = {
   palette: {
@@ -117,7 +125,7 @@ const AlbumFrame = () => (
   />
 );
 
-const BulletList = ({ items }: { items: string[] }) => (
+const BulletList = ({ items }: { items: (string | ReactNode)[] }) => (
   <ul
     style={{
       fontSize: 'var(--osd-size-body)',
@@ -126,8 +134,8 @@ const BulletList = ({ items }: { items: string[] }) => (
       paddingLeft: 52,
     }}
   >
-    {items.map((item) => (
-      <li key={item} style={{ marginBottom: 28 }}>
+    {items.map((item, i) => (
+      <li key={typeof item === 'string' ? item : i} style={{ marginBottom: 28 }}>
         {item}
       </li>
     ))}
@@ -307,7 +315,7 @@ const Opening: Page = () => (
             fontWeight: 600,
           }}
         >
-          まず伝えたいこと
+          これだけ伝えたいこと
         </p>
         <blockquote
           style={{
@@ -329,7 +337,10 @@ const Opening: Page = () => (
             '子どもがいるのは本当に幸せ。だから頑張るしかない',
             'ものすごく大変な日も、たくさんある',
             '辛いときは、たいてい「疲れ」か「睡眠不足」だけ',
-            '休もう。使える支援は全部使って休もう',
+            <>
+              <span style={{ fontSize: 56, fontWeight: 800 }}>休もう</span>
+              。使える支援は全部使って休もう
+            </>,
           ]}
         />
       </div>
