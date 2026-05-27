@@ -1,17 +1,29 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" fill="none">
-  <path d="M40 200c20-60 70-90 110-90s90 30 110 90" fill="#efe8dc" stroke="#2c2419" stroke-width="2.5"/>
-  <ellipse cx="150" cy="200" rx="110" ry="28" fill="#e8b4a2" opacity="0.4"/>
-  <circle cx="150" cy="130" r="52" fill="#fff8f2" stroke="#2c2419" stroke-width="3"/>
-  <circle cx="134" cy="124" r="5" fill="#2c2419"/>
-  <circle cx="166" cy="124" r="5" fill="#2c2419"/>
-  <path d="M138 142q12 10 24 0" stroke="#2c2419" stroke-width="2.5" stroke-linecap="round" fill="none"/>
-  <path d="M118 108l-8-14M182 108l8-14" stroke="#f5c878" stroke-width="3" stroke-linecap="round"/>
-  <path d="M60 88c0-20 16-36 36-36" stroke="#9ab8e8" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/>
-  <path d="M240 92c0-18-14-32-32-32" stroke="#9ab8e8" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/>
-  <path d="M210 56l12 8 16-12" fill="#f5c878" stroke="#2c2419" stroke-width="2" stroke-linejoin="round"/>
-  <path d="M62 60l10 10 14-10" fill="#f5c878" stroke="#2c2419" stroke-width="2" stroke-linejoin="round"/>
-  <path d="M88 220h124" stroke="#c97b63" stroke-width="4" stroke-linecap="round" opacity="0.5"/>
-  <text x="108" y="248" font-family="sans-serif" font-size="14" fill="#7a6f62" font-weight="600">'	 × x[</text>
+  <!-- ?? side -->
+  <path d="M20 200c16-52 56-82 88-82s72 30 88 82" fill="#efe8dc" stroke="#2c2419" stroke-width="2.5"/>
+  <path d="M36 88c0-18 14-32 32-32" stroke="#9ab8e8" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/>
+  <path d="M52 60l10 10 14-10" fill="#f5c878" stroke="#2c2419" stroke-width="2" stroke-linejoin="round"/>
+  <circle cx="88" cy="130" r="44" fill="#fff8f2" stroke="#2c2419" stroke-width="3"/>
+  <circle cx="76" cy="124" r="4" fill="#2c2419"/>
+  <circle cx="100" cy="124" r="4" fill="#2c2419"/>
+  <path d="M78 138q10 8 20 0" stroke="#2c2419" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+  <path d="M68 108l-8-14M108 108l8-14" stroke="#f5c878" stroke-width="3" stroke-linecap="round"/>
+  <text x="62" y="248" font-family="sans-serif" font-size="16" fill="#7a6f62" font-weight="600">??</text>
+
+  <!-- ?? side -->
+  <path d="M160 200c16-52 56-82 88-82s72 30 88 82" fill="#f5d5c8" stroke="#2c2419" stroke-width="2.5"/>
   <path d="M228 168l18 10v28l-18 10-18-10v-28z" fill="#f5d5c8" stroke="#2c2419" stroke-width="2"/>
   <path d="M234 182h8M230 190h16" stroke="#c97b63" stroke-width="2" stroke-linecap="round"/>
+  <path d="M248 92c0-18-14-32-32-32" stroke="#9ab8e8" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.35"/>
+  <circle cx="228" cy="130" r="44" fill="#fff8f2" stroke="#2c2419" stroke-width="3"/>
+  <circle cx="216" cy="126" r="4" fill="#2c2419"/>
+  <circle cx="240" cy="126" r="4" fill="#2c2419"/>
+  <path d="M218 142q10-2 20 2" stroke="#2c2419" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+  <path d="M210 108l-6 10M246 108l6 10" stroke="#c97b63" stroke-width="3" stroke-linecap="round"/>
+  <path d="M206 156l6-12 6 8 6-14 6 10" stroke="#c97b63" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.8"/>
+  <text x="202" y="248" font-family="sans-serif" font-size="16" fill="#7a6f62" font-weight="600">??</text>
+
+  <!-- divider -->
+  <path d="M150 72v176" stroke="#c97b63" stroke-width="3" stroke-linecap="round" opacity="0.45"/>
+  <ellipse cx="150" cy="200" rx="118" ry="24" fill="#e8b4a2" opacity="0.35"/>
 </svg>
