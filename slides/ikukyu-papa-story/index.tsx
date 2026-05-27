@@ -253,7 +253,7 @@ const Cover: Page = () => (
             開始までしばらくお待ちください
           </p>
           <p style={{ fontSize: 32, color: muted, margin: '0 0 36px', lineHeight: 1.55, textAlign: 'left' }}>
-            良かったら私が生後から書いている「子育て体験note」などご覧ください
+            良かったら私が書き溜めた「子育て体験note」などご覧ください
           </p>
         </div>
         <div style={{ display: 'flex', gap: 300, alignItems: 'flex-start', transform: 'translateX(-80px)' }}>
