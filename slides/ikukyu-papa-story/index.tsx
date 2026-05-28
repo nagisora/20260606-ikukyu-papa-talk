@@ -151,7 +151,7 @@ const ContentPage = ({
 }: {
   eyebrow?: string;
   title: string;
-  items: string[];
+  items: (string | ReactNode)[];
   illustration?: string;
   illuWidth?: number;
 }) => (
@@ -366,7 +366,11 @@ const SelfIntro: Page = () => (
     illustration={illusFamily}
     illuWidth={280}
     items={[
-      '玉置純也（たまきじゅんや）— 40歳、アルバイト（アプリ開発）',
+      <>
+        玉置純也（たまきじゅんや）　ハンドルネーム：なぎそら
+        <br />
+        40歳、アルバイト（アプリ開発）
+      </>,
       '妻 29歳・フルタイム（福祉系）／ 娘 1歳1ヶ月（5月産まれ）',
       'パパ・ママの2人で、育休をそれぞれ1年取得',
       '詳しい資料は note に公開中 — 自由に見てください',
