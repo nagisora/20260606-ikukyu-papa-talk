@@ -362,7 +362,7 @@ const Opening: Page = () => (
 const SelfIntro: Page = () => (
   <ContentPage
     eyebrow="あなたは誰？"
-    title="自己紹介"
+    title="わが家のプロフィール"
     illustration={illusFamily}
     illuWidth={280}
     items={[
