@@ -125,33 +125,32 @@ const AlbumFrame = () => (
   />
 );
 
-const BulletList = ({ items }: { items: (string | ReactNode)[] }) => (
+const BulletList = ({ children }: { children: ReactNode }) => (
   <ul
     style={{
       fontSize: 'var(--osd-size-body)',
       lineHeight: 1.55,
       margin: '48px 0 0',
       paddingLeft: 52,
+      display: 'flex',
+      flexDirection: 'column',
+      gap: 28,
     }}
   >
-    {items.map((item, i) => (
-      <li key={typeof item === 'string' ? item : i} style={{ marginBottom: 28 }}>
-        {item}
-      </li>
-    ))}
+    {children}
   </ul>
 );
 
 const ContentPage = ({
   eyebrow,
   title,
-  items,
+  list,
   illustration,
   illuWidth = 300,
 }: {
   eyebrow?: string;
   title: string;
-  items: (string | ReactNode)[];
+  list: ReactNode;
   illustration?: string;
   illuWidth?: number;
 }) => (
@@ -194,7 +193,7 @@ const ContentPage = ({
         >
           {title}
         </h2>
-        <BulletList items={items} />
+        <BulletList>{list}</BulletList>
       </div>
       {illustration ? (
         <div
@@ -332,17 +331,15 @@ const Opening: Page = () => (
           <br />
           でも、天国みたいに幸せ。
         </blockquote>
-        <BulletList
-          items={[
-            '子どもがいるのは本当に幸せ。だから頑張るしかない',
-            'ものすごく大変な日も、たくさんある',
-            '辛いときは、たいてい「疲れ」か「睡眠不足」だけ',
-            <>
-              <span style={{ fontSize: 56, fontWeight: 800 }}>休もう</span>
-              。使える支援は全部使って休もう
-            </>,
-          ]}
-        />
+        <BulletList>
+          <li>子どもがいるのは本当に幸せ。だから頑張るしかない</li>
+          <li>ものすごく大変な日も、たくさんある</li>
+          <li>辛いときは、たいてい「疲れ」か「睡眠不足」だけ</li>
+          <li>
+            <span style={{ fontSize: 56, fontWeight: 800 }}>休もう</span>
+            。使える支援は全部使って休もう
+          </li>
+        </BulletList>
       </div>
       <div
         style={{
@@ -365,20 +362,22 @@ const SelfIntro: Page = () => (
     title="わが家のプロフィール"
     illustration={illusFamily}
     illuWidth={280}
-    items={[
+    list={
       <>
-        玉置純也（たまきじゅんや）　ハンドルネーム：なぎそら
-        <br />
-        40歳、アルバイト（アプリ開発）
-      </>,
-      '妻 29歳・フルタイム（福祉系）／ 娘 1歳1ヶ月（5月産まれ）',
-      'パパ・ママの2人で、育休をそれぞれ1年取得',
-      <>
-        パパが子育て拠点に通いまくっていたので声をかけられ、
-        <br />
-        後輩パパのためになればとお話させて頂くことに
-      </>,
-    ]}
+        <li>
+          玉置純也（たまきじゅんや）　ハンドルネーム：なぎそら
+          <br />
+          40歳、アルバイト（アプリ開発）
+        </li>
+        <li>妻 29歳・フルタイム（福祉系）／ 娘 1歳1ヶ月（5月産まれ）</li>
+        <li>パパ・ママの2人で、育休をそれぞれ1年取得</li>
+        <li>
+          パパが子育て拠点に通いまくっていたので声をかけられ、
+          <br />
+          後輩パパのためになればとお話させて頂くことに
+        </li>
+      </>
+    }
   />
 );
 
@@ -388,12 +387,14 @@ const ChildcareTimeline: Page = () => (
     title="時期ごとのリアル"
     illustration={illusBabyTimeline}
     illuWidth={290}
-    items={[
-      '通院・出産・入院 — 最初の山場',
-      '生後1〜2ヶ月 — まだ手探り、体力も削られる',
-      '3ヶ月ごろ — 大事件（ここが一番きつい）',
-      'それ以降 — まあ安定。慣れとルーティンが効いてくる',
-    ]}
+    list={
+      <>
+        <li>{'通院・出産・入院 '}</li>
+        <li>生後1〜2ヶ月 — まだ手探り、体力も削られる</li>
+        <li>3ヶ月ごろ — 大事件（ここが一番きつい）</li>
+        <li>それ以降 — まあ安定。慣れとルーティンが効いてくる</li>
+      </>
+    }
   />
 );
 
@@ -403,12 +404,14 @@ const PaternityReality: Page = () => (
     title="現実として直面すること"
     illustration={illusPapaWork}
     illuWidth={270}
-    items={[
-      '収入・キャリア — 減る・止まる不安は本物',
-      '子どもの対応・家事 — できるようになるまで時間がかかる',
-      'ママと険悪になる — 睡眠不足と役割のすれ違いで起きやすい',
-      'キラキラだけの話ではない。対策を考える前提で話す',
-    ]}
+    list={
+      <>
+        <li>収入・キャリア — 減る・止まる不安は本物</li>
+        <li>子どもの対応・家事 — できるようになるまで時間がかかる</li>
+        <li>ママと険悪になる — 睡眠不足と役割のすれ違いで起きやすい</li>
+        <li>キラキラだけの話ではない。対策を考える前提で話す</li>
+      </>
+    }
   />
 );
 
@@ -495,12 +498,14 @@ const RestAndSupport: Page = () => (
     title="休むことがいちばんの対策"
     illustration={illusRest}
     illuWidth={280}
-    items={[
-      'イライラ・体が動かないときは、まず疲れと睡眠不足を疑う',
-      'パートナーへの当たりも、休めばだいぶ和らぐ',
-      '子育て拠点・エンジェルケア・一時預かり・保健センター',
-      '使えるものは全部使う。休むことに罪悪感を持たない',
-    ]}
+    list={
+      <>
+        <li>イライラ・体が動かないときは、まず疲れと睡眠不足を疑う</li>
+        <li>パートナーへの当たりも、休めばだいぶ和らぐ</li>
+        <li>子育て拠点・エンジェルケア・一時預かり・保健センター</li>
+        <li>使えるものは全部使う。休むことに罪悪感を持たない</li>
+      </>
+    }
   />
 );
 
