@@ -8,44 +8,40 @@ import illusFamily from './assets/illus-family.svg';
 import illusHeavenHell from './assets/illus-heaven-hell.svg';
 import illusPapaWork from './assets/illus-papa-work.svg';
 import illusRest from './assets/illus-rest.svg';
-import illusSns from './assets/illus-sns.svg';
 import doodleHeart from './assets/doodle-heart.svg';
 import doodleStar from './assets/doodle-star.svg';
 import qrNote from './assets/qr-note.png';
 
 export const notes: (string | undefined)[] = [
-  "- 私が変なこと言っていたら、経験者の方はツッコミをお願いします！",
-  `- 幸せなことの例：存在が可愛い、純粋な笑顔も素敵、成長に感動する、子どもいらないといっていたパパも今ではデレデレ
-- 大変なこと：エレベーターで一緒になったパパさんから「子育て大変ですよね」と話しかけられる、夫婦で育休取って何事もなく上手くいったという話を聞いたことない、
-- `,
+  '- 私が変なこと言っていたら、経験者の方はツッコミをお願いします！',
+  `- 幸せなこと：存在が可愛い、純粋な笑顔、成長に感動する、「子どもいらない」と言っていたパパも今ではデレデレ
+- 大変なこと：夫婦で育休を取って、何事もなく上手くいったという話はほとんど聞いたことがない`,
   undefined,
-  `- 通院中は順調か、障害はないか、などとても不安だった
-  - 障害の検査をしようかと悩んだが、障害があると分かっても何も出来ないと思ったので、検査はしなかった。ただ、健康に産まれることを祈るのみだった
-  - 友達でも2組ほど流産をされたと聞いた。調べたら10%は誰が悪いわけでもなく、流産の可能性があるということ。悲しいですが、すごくは落ち込まないようにしてください。
-- 出産は立ち会った。予定日の3日前の夜11:00頃に嫁が「きたかも」と言ったが、体調に関してオーバーに表現する人なので内心「はいはい」と思いながら産院に行ったら「開き始めている」とのことで、行ってよかった
-  - 出産は12時間くらい掛かるということで、徹夜を覚悟したが6時間くらいの朝7時位に産まれた。無痛分娩で。出が悪かったので吸引してもらった
-  - 産まれた我が子は「エイリアンみたい。愛せるのか心配」と思った。数実後のシャンプー後の姿は可愛かった。身だしなみ大事
-- パパも産後入院が出来る産院（吹上マタニティクリニック）でやったので、産後3日めくらいからはパパママベビーで一緒に過ごした。
-  - お手手が小さくて可愛いし、ミルクを飲む姿も可愛い、よちよち感が可愛すぎる。
-  - 知り合いで、元々は子ども嫌いな人で「子どもいらない」と言っていた人がいて、奥さんに押し切られて子でも出来たら溺愛パパになったので、子どもは愛せるので安心して。
-  - 抱っこで寝て、ベットに寝かせようとすると起きる、俗に言う背中スイッチで、夜中じゅうお腹の上でうつ伏せで寝かせていた。うつ伏せはあまり良くないとは知りつつ、どうしようもなかった
-  - まだ、仕事の引き継ぎもあり仕事をしながら産院に通っていて、お腹の上にベビーを抱えながらなど寝れるわけもなく、ぼーっとしながら仕事へ言っていた。
-  - 仕事行って、家に帰って、洗濯や食事をして産院へ行き、産院でシャワーを浴びて寝て、朝は産院から出勤していた
-  - ママは産院で1人で一人でとても心細いので、なるべく行ってあげてください。私も先輩パパからそうアドバイスされたので、そうした。
-- 生後1〜2ヶ月は、おむつ、だっこ、授乳、の繰り返し
-  - 夜も寝る訳では寝ないので、育休に入ってからは、ママが昼当番、パパが夜当番で、私が夜中じゅうベビーの相手していた。
-  - 抱っこひもに入れてゲームしたり、一緒に夜中の散歩に行ったり。
-  - 1つ失敗したのが、夜中はママを寝かせてあげたくて、授乳じゃなくミルクにしたこと。おっぱいが安定せずに痛みが生じ、1回3,000〜5,000円の民間のおっぱいマッサージに何度も通い、タクシー代も含め結構かかって財布が痛かった。
-  - 後々に、名古屋市には「なごやMommy Care」というサービスがあり、助産師さんに家に来てもらいおっぱいマッサージを1,500円でやってくれるサービスがあることを知り、くそう、と思った。
-    - このサービスは、助産師さんの家にベビーと一緒に行き、一日ベビーを見てもらい、ランチも作ってもらって寝かせてもらうのが2,500円でできるので、最初から使ったほうが良いと思う！
-  - この時期はオムツ替えと抱っこしかした記憶がない
-- 3ヶ月くらいになるとベビーの世話もこなれてきて、余裕が出るがそうなるとパートナーとの衝突が増える
-  - 二人ともお世話で疲れていて、「相手がやってくれているからいいや」と今まで出来なかった娯楽をしていたりすると、別の方がイライラして爆発する
-  - 3日に1度くらいケンカをする時期があり「これはやばい」と、保健センターに相談し、結局3者面談をしてもらい、一旦落ち着いた
-  - でもやはり、1つ屋根の下で一緒にいると相手の細かいことが目についてイライラしたり、暇なので子育て拠点に行ってみたら、メチャ良かった
-- 子育て拠点に行くようになり、午前担当後ご担当で分け、それぞれで子育てをするようになったら、2ヶ月に1度くらいのケンカになったので良かった
-
-- 他のパパの話を聞いても、子どもより嫁さんとの関係がやばい、パパが育休を半年取るつもりだったけど険悪すぎて1ヶ月で復帰した、など、基本的にパパママで育休を取って何事もなく出来ている家庭はないので、安心してください`,
+  `- 通院中は、順調か、障害はないか、などとても不安だった。検査は悩んだが、健康に産まれることを祈るのみだった
+- 出産は立ち会った。予定日の3日前の夜11:00頃に嫁が「きたかも」と言い、内心「はいはい」と思いながら産院に行ったら「開き始めている」とのことで、行ってよかった
+  - 無痛分娩、吸引、6時間くらいで朝7時頃に産まれた
+  - 産まれた我が子は「エイリアンみたい。愛せるのか心配」と思ったが、数日後のシャンプー後の姿は可愛かった。身だしなみ大事
+- パパも産後入院できる産院（吹上マタニティクリニック）だったので、産後3日目くらいからはパパママベビーで過ごした
+  - ママは産院で1人だととても心細いので、なるべく行ってあげてください
+- 生後1〜2ヶ月は、おむつ、抱っこ、授乳の繰り返し
+  - ママが昼当番、パパが夜当番で、夜中じゅうベビーの相手をしていた
+  - 夜中はママを寝かせたくてミルクにしたが、おっぱいが安定せず、民間のおっぱいマッサージに何度も通った
+  - なごやMommy Careを最初から知っていればよかった。最初から使ったほうが良いと思う`,
+  `- 3ヶ月くらいになるとベビーの世話に慣れて余裕が出るが、パートナーとの衝突が増えた
+  - 二人とも疲れていて、「相手がやってくれているからいいや」と自分の娯楽をしていると、別の方がイライラして爆発する
+  - 3日に1度くらいケンカをする時期があり、「これはやばい」と保健センターに相談し、3者面談をしてもらった
+  - 子育て拠点に行くようになり、午前担当・午後担当で分けたら、2ヶ月に1度くらいのケンカになった
+- パパが取る仕事は軽く口頭で話す
+  - ベビーは何だかんだママに任せがち。掃除、洗濯、オムツ替え、抱っこ、食事作り、買い物、洗い物など、パパが先に取れるものを取る
+- 他のパパの話を聞いても、子どもより嫁さんとの関係がやばい、険悪すぎて1ヶ月で復帰した、などは普通にあるので安心して`,
+  `- イライラ・体が動かないときは、まず疲れと睡眠不足を疑う
+- 子育て拠点、保健センター、エンジェルケア、一時預かり、なごやMommy Careなど、使えるものは全部使う
+- 悩みが小さいうちに他者を頼る。後からだと体力もお金も削られる`,
+  `- 会社により大小はあるが、育休は収入・昇進に影響があると思う
+- 私の場合は昇給見送り。ただ、復帰後に重宝され、見送られた昇給分をアップしてもらえた
+- 1〜6ヶ月くらいで育休を取得するのが良いと思う。1年はキャリアに響きやすい
+- 育休に入る前に会社に貢献し、上司やチームメンバーに「待っているからね」と送り出してもらえるポジションを作ることが大切`,
+  undefined,
 ];
 
 
@@ -407,129 +403,69 @@ const SelfIntro: Page = () => (
   />
 );
 
-const ChildcareTimeline: Page = () => (
+const StoryThroughTwoMonths: Page = () => (
   <ContentPage
-    eyebrow="具体的な子育て"
-    title="時期ごとのリアル"
+    eyebrow="うちの話・前半"
+    title="通院から生後2ヶ月まで"
     illustration={illusBabyTimeline}
     illuWidth={290}
     list={
       <>
-        <li>{'通院・出産・入院 — 無事に産まれるか不安、誕生の喜び'}</li>
-        <li>生後1〜2ヶ月 — まだ手探り、とにかく必死</li>
-        <li>3ヶ月ごろ — 大事件（ここが一番きつい）</li>
-        <li>それ以降 — まあ安定。慣れとルーティンが効いてくる</li>
+        <li>通院〜出産 — 不安、立ち会い。産院にはできるだけ一緒に</li>
+        <li>産後入院 — パパも泊まれる病院。ママは1人だと心細い</li>
+        <li>生後1〜2ヶ月 — 夜が長い。おむつと抱っこの繰り返し</li>
+        <li>失敗もした — 授乳を勝手にやめさせない（ミルク一本化など）</li>
       </>
     }
   />
 );
 
-const PaternityReality: Page = () => (
+const CoupleAtThreeMonths: Page = () => (
   <ContentPage
-    eyebrow="男性が育休を取ると"
-    title="現実として直面すること"
-    illustration={illusPapaWork}
-    illuWidth={270}
+    eyebrow="うちの話・後半"
+    title="3ヶ月ごろ、夫婦がいちばんしんどかった"
+    illustration={illusFamily}
+    illuWidth={260}
     list={
       <>
-        <li>収入・キャリア — 減る・止まる不安は本物</li>
-        <li>子どもの対応・家事 — できるようになるまで時間がかかる</li>
-        <li>ママと険悪になる — 睡眠不足と役割のすれ違いで起きやすい</li>
-        <li>キラキラだけの話ではない。対策を考える前提で話す</li>
+        <li>ベビーの世話に慣れると、かえって夫婦のすれ違いが増えやすい</li>
+        <li>「相手がやってくれてるから」自分だけ楽をすると、爆発しやすい</li>
+        <li>しんどいときは保健センターへ。3者面談まで頼んでよい</li>
+        <li>パパは、掃除・洗濯・夜番など「ベビー以外」を先に取る</li>
       </>
     }
   />
-);
-
-const SnsReality: Page = () => (
-  <div style={{ ...fill, background: 'var(--osd-bg)', color: 'var(--osd-text)' }}>
-    <AlbumFrame />
-    <DoodleDecor />
-    <div
-      style={{
-        padding: pad,
-        height: '100%',
-        boxSizing: 'border-box',
-        display: 'grid',
-        gridTemplateColumns: '1fr 1fr',
-        gap: 48,
-        alignItems: 'center',
-        ...aboveDecor,
-      }}
-    >
-      <div>
-        <p style={{ fontSize: 26, color: 'var(--osd-accent)', letterSpacing: '0.1em', margin: 0 }}>
-          SNSと現実
-        </p>
-        <h2
-          style={{
-            fontFamily: 'var(--osd-font-display)',
-            fontSize: 72,
-            fontWeight: 800,
-            margin: '20px 0 0',
-            lineHeight: 1.15,
-          }}
-        >
-          キラキラだけ
-          <br />
-          じゃない
-        </h2>
-        <p style={{ fontSize: 'var(--osd-size-body)', lineHeight: 1.55, marginTop: 40 }}>
-          SNSでは幸せそうな子育てがよく見える。でも大変なことも、本当にたくさんある。
-        </p>
-      </div>
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 28, alignItems: 'center' }}>
-        <div
-          style={{
-            background: surface,
-            borderRadius: 'var(--osd-radius)',
-            padding: 24,
-            border: `2px solid ${accentSoft}`,
-          }}
-        >
-          <Illu src={illusSns} width={240} />
-        </div>
-        <div
-          style={{
-            background: surface,
-            borderRadius: 'var(--osd-radius)',
-            padding: 36,
-            fontSize: 32,
-            lineHeight: 1.55,
-            color: muted,
-            border: `1px solid ${accentSoft}`,
-            width: '100%',
-            boxSizing: 'border-box',
-          }}
-        >
-          <p style={{ margin: 0, color: 'var(--osd-text)', fontWeight: 600, fontSize: 34 }}>
-            見えない側
-          </p>
-          <ul style={{ margin: '24px 0 0', paddingLeft: 36 }}>
-            <li>夜泣き・授乳・病院</li>
-            <li>夫婦のすれ違い</li>
-            <li>「ちゃんとできてる？」の不安</li>
-            <li>誰にも言えない疲れ</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <PageFooter />
-  </div>
 );
 
 const RestAndSupport: Page = () => (
   <ContentPage
-    eyebrow="対策"
-    title="休むことがいちばんの対策"
+    eyebrow="いちばん効く対策"
+    title="休む。支援を全部使う"
     illustration={illusRest}
     illuWidth={280}
     list={
       <>
-        <li>イライラ・体が動かないときは、まず疲れと睡眠不足を疑う</li>
-        <li>パートナーへの当たりも、休めばだいぶ和らぐ</li>
-        <li>子育て拠点・エンジェルケア・一時預かり・保健センター</li>
+        <li>イライラ・しんどさの正体は、だいたい疲れと睡眠不足</li>
+        <li>子育て拠点・保健センター・エンジェルケア・一時預かり</li>
+        <li>なごやMommy Careなど、小さい悩みは早めに人へ頼る</li>
         <li>使えるものは全部使う。休むことに罪悪感を持たない</li>
+      </>
+    }
+  />
+);
+
+const LeaveAndCareer: Page = () => (
+  <ContentPage
+    eyebrow="育休を考えるとき"
+    title="育休は取る価値。長さは家族で"
+    illustration={illusPapaWork}
+    illuWidth={270}
+    list={
+      <>
+        <li>収入・昇進への不安は本物。でも1〜6ヶ月は取る価値が大きい</li>
+        <li>1年はキャリアに響きやすい。会社・人によって差はある</li>
+        <li>育休前に貢献し、「待ってるね」と送り出してもらえると戻りやすい</li>
+        <li>キャリアも大事。金銭面とセットで家族で決める</li>
       </>
     }
   />
@@ -559,48 +495,48 @@ const Closing: Page = () => (
         ...aboveDecor,
       }}
     >
-    <div
-      style={{
-        background: surface,
-        borderRadius: 'var(--osd-radius)',
-        padding: 28,
-        border: `2px solid ${accentSoft}`,
-        marginBottom: 28,
-      }}
-    >
-      <Illu src={illusCheer} width={240} />
-    </div>
-    <p style={{ fontSize: 26, color: 'var(--osd-accent)', letterSpacing: '0.12em', margin: 0 }}>
-      おわりに
-    </p>
-    <h2
-      style={{
-        fontFamily: 'var(--osd-font-display)',
-        fontSize: 80,
-        fontWeight: 800,
-        margin: '24px 0 24px',
-        lineHeight: 1.2,
-      }}
-    >
-      大変だけど、
-      <br />
-      一緒に頑張りましょう
-    </h2>
-    <p style={{ fontSize: 36, color: muted, margin: 0, lineHeight: 1.55 }}>
-      質問・感想・自分の話も、ぜひ聞かせてください
-    </p>
-    <p
-      style={{
-        marginTop: 40,
-        fontSize: 30,
-        color: muted,
-        padding: '20px 40px',
-        background: surface,
-        borderRadius: 'var(--osd-radius)',
-      }}
-    >
-      資料・詳細 → note
-    </p>
+      <div
+        style={{
+          background: surface,
+          borderRadius: 'var(--osd-radius)',
+          padding: 28,
+          border: `2px solid ${accentSoft}`,
+          marginBottom: 28,
+        }}
+      >
+        <Illu src={illusCheer} width={240} />
+      </div>
+      <p style={{ fontSize: 26, color: 'var(--osd-accent)', letterSpacing: '0.12em', margin: 0 }}>
+        おわりに
+      </p>
+      <h2
+        style={{
+          fontFamily: 'var(--osd-font-display)',
+          fontSize: 80,
+          fontWeight: 800,
+          margin: '24px 0 24px',
+          lineHeight: 1.2,
+        }}
+      >
+        大変だけど、
+        <br />
+        一緒に頑張りましょう
+      </h2>
+      <p style={{ fontSize: 36, color: muted, margin: 0, lineHeight: 1.55 }}>
+        質問・感想・自分の話も、ぜひ聞かせてください
+      </p>
+      <p
+        style={{
+          marginTop: 40,
+          fontSize: 30,
+          color: muted,
+          padding: '20px 40px',
+          background: surface,
+          borderRadius: 'var(--osd-radius)',
+        }}
+      >
+        エピソードの詳細 → note
+      </p>
     </div>
     <PageFooter />
   </div>
@@ -615,9 +551,9 @@ export default [
   Cover,
   Opening,
   SelfIntro,
-  ChildcareTimeline,
-  PaternityReality,
-  SnsReality,
+  StoryThroughTwoMonths,
+  CoupleAtThreeMonths,
   RestAndSupport,
+  LeaveAndCareer,
   Closing,
 ] satisfies Page[];
