@@ -30,6 +30,7 @@ export const notes: (string | undefined)[] = [
   `- 3ヶ月くらいになるとベビーの世話に慣れて余裕が出るが、パートナーとの衝突が増えた
   - 二人とも疲れていて、「相手がやってくれているからいいや」と自分の娯楽をしていると、別の方がイライラして爆発する
   - 3日に1度くらいケンカをする時期があり、「これはやばい」と保健センターに相談し、3者面談をしてもらった
+    - クイックルワイパーの新品で普段掃除しないような所を掃除して、「汚いからここもやって」と言われ「自分でやって」と返したら喧嘩
   - 子育て拠点に行くようになり、午前担当・午後担当で分けたら、2ヶ月に1度くらいのケンカになった
 - パパが取る仕事は軽く口頭で話す
   - ベビーは何だかんだママに任せがち。掃除、洗濯、オムツ替え、抱っこ、食事作り、買い物、洗い物など、パパが先に取れるものを取る
@@ -41,7 +42,6 @@ export const notes: (string | undefined)[] = [
 - 私の場合は昇給見送り。ただ、復帰後に重宝され、見送られた昇給分をアップしてもらえた
 - 1〜6ヶ月くらいで育休を取得するのが良いと思う。1年はキャリアに響きやすい
 - 育休に入る前に会社に貢献し、上司やチームメンバーに「待っているからね」と送り出してもらえるポジションを作ることが大切`,
-  undefined,
 ];
 
 
@@ -149,32 +149,58 @@ const AlbumFrame = () => (
   />
 );
 
+const bulletListStyle: CSSProperties = {
+  fontSize: 'var(--osd-size-body)',
+  lineHeight: 1.55,
+  margin: 0,
+  paddingLeft: 52,
+  display: 'flex',
+  flexDirection: 'column',
+  gap: 28,
+};
+
 const BulletList = ({ children }: { children: ReactNode }) => (
-  <ul
+  <ul style={{ ...bulletListStyle, margin: '48px 0 0' }}>{children}</ul>
+);
+
+const DividedBulletList = ({ top, bottom }: { top: ReactNode; bottom: ReactNode }) => (
+  <div
     style={{
-      fontSize: 'var(--osd-size-body)',
-      lineHeight: 1.55,
       margin: '48px 0 0',
-      paddingLeft: 52,
       display: 'flex',
       flexDirection: 'column',
-      gap: 28,
+      gap: 32,
     }}
   >
-    {children}
-  </ul>
+    <ul style={bulletListStyle}>{top}</ul>
+    <div
+      style={{
+        background: surface,
+        borderRadius: 'var(--osd-radius)',
+        padding: '28px 32px',
+        border: `2px solid ${accentSoft}`,
+        boxShadow: '0 8px 28px rgba(44, 36, 25, 0.05)',
+      }}
+    >
+      <ul style={{ ...bulletListStyle, paddingLeft: 40 }}>{bottom}</ul>
+    </div>
+  </div>
 );
 
 const ContentPage = ({
   eyebrow,
   title,
   list,
+  listTop,
+  listBottom,
   illustration,
   illuWidth = 300,
 }: {
   eyebrow?: string;
   title: string;
-  list: ReactNode;
+  list?: ReactNode;
+  listTop?: ReactNode;
+  listBottom?: ReactNode;
   illustration?: string;
   illuWidth?: number;
 }) => (
@@ -217,7 +243,11 @@ const ContentPage = ({
         >
           {title}
         </h2>
-        <BulletList>{list}</BulletList>
+        {listTop != null && listBottom != null ? (
+          <DividedBulletList top={listTop} bottom={listBottom} />
+        ) : (
+          <BulletList>{list}</BulletList>
+        )}
       </div>
       {illustration ? (
         <div
@@ -409,12 +439,17 @@ const StoryThroughTwoMonths: Page = () => (
     title="通院から生後2ヶ月まで"
     illustration={illusBabyTimeline}
     illuWidth={290}
-    list={
+    listTop={
       <>
-        <li>通院〜出産 — 不安、立ち会い。産院にはできるだけ一緒に</li>
-        <li>産後入院 — パパも泊まれる病院。ママは1人だと心細い</li>
-        <li>生後1〜2ヶ月 — 夜が長い。おむつと抱っこの繰り返し</li>
-        <li>失敗もした — 授乳を勝手にやめさせない（ミルク一本化など）</li>
+        <li>通院〜出産 — 健康に産まれるか不安、無痛分娩で8hで産まれた</li>
+        <li>産後入院 — ママは1人で心細い、できるだけ一緒に</li>
+        <li>生後1〜2ヶ月 — オムツ交換と抱っこの無限ループ、昼と夜で分担</li>
+      </>
+    }
+    listBottom={
+      <>
+        <li>分からないことだらけで全て手探り、とくかく必死にやった</li>
+        <li>おっぱいトラブル(T_T)、なごやMommy Careがいいかも！</li>
       </>
     }
   />
@@ -423,16 +458,19 @@ const StoryThroughTwoMonths: Page = () => (
 const CoupleAtThreeMonths: Page = () => (
   <ContentPage
     eyebrow="うちの話・後半"
-    title="3ヶ月ごろ、夫婦がいちばんしんどかった"
+    title="3ヶ月頃：夫婦間トラブルが頻発"
     illustration={illusFamily}
     illuWidth={260}
-    list={
+    listTop={
       <>
-        <li>ベビーの世話に慣れると、かえって夫婦のすれ違いが増えやすい</li>
-        <li>「相手がやってくれてるから」自分だけ楽をすると、爆発しやすい</li>
-        <li>しんどいときは保健センターへ。3者面談まで頼んでよい</li>
-        <li>パパは、掃除・洗濯・夜番など「ベビー以外」を先に取る</li>
+        <li>ベビーの世話に慣れてきて、パートナーの動きが気になる</li>
+        <li>自分のペースが崩される、相手に任せっきりにする、などで衝突</li>
+        <li>我が家は、3日に1度のペースで喧嘩していた／(^o^)＼</li>
+        <li>これじゃヤバイと保健センターで相談。3者面談してもらう</li>
       </>
+    }
+    listBottom={
+      <li>子育て拠点へ行って気分転換。ほぼ毎日通った</li>
     }
   />
 );
