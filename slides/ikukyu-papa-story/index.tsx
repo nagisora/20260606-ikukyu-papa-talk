@@ -123,6 +123,26 @@ const DoodleDecor = () => (
   </>
 );
 
+const qrImgStyle: CSSProperties = { width: 180, height: 180, display: 'block', borderRadius: 8 };
+const qrCaptionStyle: CSSProperties = { fontSize: 28, color: muted, margin: 0, fontWeight: 600 };
+
+const MaterialQrRow = ({ style }: { style?: CSSProperties }) => (
+  <div style={{ display: 'flex', gap: 550, alignItems: 'flex-start', ...style }}>
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 12 }}>
+      <img src={qrNote} alt="子育てnote" draggable={false} style={qrImgStyle} />
+      <p style={qrCaptionStyle}>
+        子育て体験note
+        <br />
+        {' （なぎそら）'}
+      </p>
+    </div>
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 12 }}>
+      <img src={qrSlide} alt="本日の資料" draggable={false} style={qrImgStyle} />
+      <p style={qrCaptionStyle}>本日の資料</p>
+    </div>
+  </div>
+);
+
 const PageFooter = () => {
   const { current, total } = useSlidePageNumber();
   return (
@@ -315,26 +335,7 @@ const Cover: Page = () => (
             良かったら私が書き溜めた「子育て体験note」などご覧ください
           </p>
         </div>
-        <div style={{ display: 'flex', gap: 550, alignItems: 'flex-start', transform: 'translateX(-80px)' }}>
-          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 12 }}>
-            <img
-              src={qrNote}
-              alt="子育てnote"
-              draggable={false}
-              style={{ width: 180, height: 180, display: 'block', borderRadius: 8 }}
-            />
-            <p style={{ fontSize: 28, color: muted, margin: 0, fontWeight: 600 }}>子育て体験note<br />{' （なぎそら）'}</p>
-          </div>
-          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 12 }}>
-            <img
-              src={qrSlide}
-              alt="本日の資料"
-              draggable={false}
-              style={{ width: 180, height: 180, display: 'block', borderRadius: 8 }}
-            />
-            <p style={{ fontSize: 28, color: muted, margin: 0, fontWeight: 600 }}>本日の資料</p>
-          </div>
-        </div>
+        <MaterialQrRow style={{ transform: 'translateX(-80px)' }} />
       </div>
     </div>
     <div
@@ -529,18 +530,21 @@ const Closing: Page = () => (
       color: 'var(--osd-text)',
       display: 'flex',
       flexDirection: 'column',
-      justifyContent: 'center',
+      justifyContent: 'space-between',
       alignItems: 'center',
       textAlign: 'center',
       padding: pad,
+      paddingBottom: 100,
     }}
   >
     <AlbumFrame />
     <DoodleDecor />
     <div
       style={{
+        flex: 1,
         display: 'flex',
         flexDirection: 'column',
+        justifyContent: 'center',
         alignItems: 'center',
         ...aboveDecor,
       }}
@@ -569,25 +573,9 @@ const Closing: Page = () => (
         }}
       >
         大変だけど幸せすぎるので、<br />皆で頑張りましょう！
-        
-        {''}
       </h2>
-      <p style={{ fontSize: 36, color: muted, margin: 0, lineHeight: 1.55 }}>
-        質問・感想・自分の話も、ぜひ聞かせてください
-      </p>
-      <p
-        style={{
-          marginTop: 40,
-          fontSize: 30,
-          color: muted,
-          padding: '20px 40px',
-          background: surface,
-          borderRadius: 'var(--osd-radius)',
-        }}
-      >
-        エピソードの詳細 → note
-      </p>
     </div>
+    <MaterialQrRow style={{ justifyContent: 'center', ...aboveDecor }} />
     <PageFooter />
   </div>
 );
