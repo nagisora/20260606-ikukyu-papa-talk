@@ -1,6 +1,6 @@
 import type { CSSProperties, ReactNode } from 'react';
 import type { DesignSystem, Page, SlideMeta } from '@open-slide/core';
-import { ImagePlaceholder, useSlidePageNumber } from '@open-slide/core';
+import { useSlidePageNumber } from '@open-slide/core';
 
 import illusBabyTimeline from './assets/illus-baby-timeline.svg';
 import illusCheer from './assets/illus-cheer.svg';
@@ -11,6 +11,7 @@ import illusRest from './assets/illus-rest.svg';
 import doodleHeart from './assets/doodle-heart.svg';
 import doodleStar from './assets/doodle-star.svg';
 import qrNote from './assets/qr-note.png';
+import qrSlide from './assets/qr-slide.png';
 
 export const notes: (string | undefined)[] = [
   '- 私が変なこと言っていたら、経験者の方はツッコミをお願いします！',
@@ -314,7 +315,7 @@ const Cover: Page = () => (
             良かったら私が書き溜めた「子育て体験note」などご覧ください
           </p>
         </div>
-        <div style={{ display: 'flex', gap: 300, alignItems: 'flex-start', transform: 'translateX(-80px)' }}>
+        <div style={{ display: 'flex', gap: 550, alignItems: 'flex-start', transform: 'translateX(-80px)' }}>
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 12 }}>
             <img
               src={qrNote}
@@ -322,10 +323,15 @@ const Cover: Page = () => (
               draggable={false}
               style={{ width: 180, height: 180, display: 'block', borderRadius: 8 }}
             />
-            <p style={{ fontSize: 28, color: muted, margin: 0, fontWeight: 600 }}>子育て体験note</p>
+            <p style={{ fontSize: 28, color: muted, margin: 0, fontWeight: 600 }}>子育て体験note<br />{' （なぎそら）'}</p>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 12 }}>
-            <ImagePlaceholder hint="本日の資料 QRコード" width={180} height={180} />
+            <img
+              src={qrSlide}
+              alt="本日の資料"
+              draggable={false}
+              style={{ width: 180, height: 180, display: 'block', borderRadius: 8 }}
+            />
             <p style={{ fontSize: 28, color: muted, margin: 0, fontWeight: 600 }}>本日の資料</p>
           </div>
         </div>
