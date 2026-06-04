@@ -1,6 +1,6 @@
 import type { CSSProperties, ReactNode } from 'react';
 import type { DesignSystem, Page, SlideMeta } from '@open-slide/core';
-import { ImagePlaceholder, useSlidePageNumber } from '@open-slide/core';
+import { useSlidePageNumber } from '@open-slide/core';
 
 import illusBabyTimeline from './assets/illus-baby-timeline.svg';
 import illusCheer from './assets/illus-cheer.svg';
@@ -11,13 +11,19 @@ import illusRest from './assets/illus-rest.svg';
 import doodleHeart from './assets/doodle-heart.svg';
 import doodleStar from './assets/doodle-star.svg';
 import qrNote from './assets/qr-note.png';
+import qrSlide from './assets/qr-slide.png';
 
 export const notes: (string | undefined)[] = [
   '- 私が変なこと言っていたら、経験者の方はツッコミをお願いします！',
-  `- 幸せなこと：存在が可愛い、純粋な笑顔、成長に感動する、「子どもいらない」と言っていたパパも今ではデレデレ
+  `今日はこんな感じのことをお伝えできればと思っています。
+
+- 幸せなこと：存在が可愛い、純粋な笑顔、成長に感動する、「子どもいらない」と言っていたパパも今ではデレデレ
 - 大変なこと：夫婦で育休を取って、何事もなく上手くいったという話はほとんど聞いたことがない`,
   undefined,
-  `- 通院中は、順調か、障害はないか、などとても不安だった。検査は悩んだが、健康に産まれることを祈るのみだった
+  `何話したらパパさんたちが楽しいのかと考えて、子どもが産まれてからの出来事を話すのが面白そうと思いました。
+プレパパさんはこれからの事を事前に知り、パパさんは「こうだったなあ」としみじみしていただければと思います
+
+- 通院中は、順調か、障害はないか、などとても不安だった。検査は悩んだが、健康に産まれることを祈るのみだった
 - 出産は立ち会った。予定日の3日前の夜11:00頃に嫁が「きたかも」と言い、内心「はいはい」と思いながら産院に行ったら「開き始めている」とのことで、行ってよかった
   - 無痛分娩、吸引、6時間くらいで朝7時頃に産まれた
   - 産まれた我が子は「エイリアンみたい。愛せるのか心配」と思ったが、数日後のシャンプー後の姿は可愛かった。身だしなみ大事
@@ -115,6 +121,33 @@ const DoodleDecor = () => (
       style={{ position: 'absolute', bottom: 92, left: 200, opacity: 0.75, transform: 'rotate(-6deg)', zIndex: 1 }}
     />
   </>
+);
+
+const QrRow = ({ style }: { style?: CSSProperties }) => (
+  <div style={{ display: 'flex', gap: 550, alignItems: 'flex-start', ...style }}>
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 12 }}>
+      <img
+        src={qrNote}
+        alt="子育てnote"
+        draggable={false}
+        style={{ width: 180, height: 180, display: 'block', borderRadius: 8 }}
+      />
+      <p style={{ fontSize: 28, color: muted, margin: 0, fontWeight: 600 }}>
+        子育て体験note
+        <br />
+        （なぎそら）
+      </p>
+    </div>
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 12 }}>
+      <img
+        src={qrSlide}
+        alt="本日の資料"
+        draggable={false}
+        style={{ width: 180, height: 180, display: 'block', borderRadius: 8 }}
+      />
+      <p style={{ fontSize: 28, color: muted, margin: 0, fontWeight: 600 }}>本日の資料</p>
+    </div>
+  </div>
 );
 
 const PageFooter = () => {
@@ -309,21 +342,7 @@ const Cover: Page = () => (
             良かったら私が書き溜めた「子育て体験note」などご覧ください
           </p>
         </div>
-        <div style={{ display: 'flex', gap: 300, alignItems: 'flex-start', transform: 'translateX(-80px)' }}>
-          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 12 }}>
-            <img
-              src={qrNote}
-              alt="子育てnote"
-              draggable={false}
-              style={{ width: 180, height: 180, display: 'block', borderRadius: 8 }}
-            />
-            <p style={{ fontSize: 28, color: muted, margin: 0, fontWeight: 600 }}>子育て体験note</p>
-          </div>
-          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 12 }}>
-            <ImagePlaceholder hint="本日の資料 QRコード" width={180} height={180} />
-            <p style={{ fontSize: 28, color: muted, margin: 0, fontWeight: 600 }}>本日の資料</p>
-          </div>
-        </div>
+        <QrRow style={{ transform: 'translateX(-80px)' }} />
       </div>
     </div>
     <div
@@ -418,8 +437,9 @@ const SelfIntro: Page = () => (
     illuWidth={280}
     list={
       <>
+        <li>ゆわちゃんパパ、たまきじゅんや、なぎそら。ずっと御器所</li>
         <li>
-          玉置純也（たまきじゅんや） ハンドルネーム：なぎそら<br />40歳、アルバイト（プログラマー ）、ずっと御器所
+          40歳、アルバイト（プログラマー ）、幼稚園の事務員を2年
         </li>
         <li>妻 29歳・フルタイム（福祉系）／ 娘 1歳1ヶ月（5月産まれ）</li>
         <li>パパ・ママの2人で、育休をそれぞれ1年取得</li>
@@ -470,23 +490,23 @@ const CoupleAtThreeMonths: Page = () => (
       </>
     }
     listBottom={
-      <li>子育て拠点へ行って気分転換。ほぼ毎日通った</li>
+      <li>子育て拠点へ行って気分転換。ほぼ毎日通った<br />ママが午前、パパが午後と子育て担当を分けた</li>
     }
   />
 );
 
 const RestAndSupport: Page = () => (
   <ContentPage
-    eyebrow="いちばん効く対策"
-    title="休む。支援を全部使う"
+    eyebrow="対策"
+    title="休む。子育て拠点のススメ"
     illustration={illusRest}
     illuWidth={280}
     list={
       <>
         <li>イライラ・しんどさの正体は、だいたい疲れと睡眠不足</li>
-        <li>子育て拠点・保健センター・エンジェルケア・一時預かり</li>
-        <li>なごやMommy Careなど、小さい悩みは早めに人へ頼る</li>
-        <li>使えるものは全部使う。休むことに罪悪感を持たない</li>
+        <li>公的支援：子育て拠点、一時預かり、のびサポ、誰でも通園、<br />　保健センター、 なごやMommy Care、定住促進住宅</li>
+        <li>オススメは「子育て拠点」。〜7ヶ月：恵方の家、8ヶ月〜：こころと</li>
+        <li>休むことに罪悪感を持たない、悩みは小さいうちに早めに相談する</li>
       </>
     }
   />
@@ -494,16 +514,16 @@ const RestAndSupport: Page = () => (
 
 const LeaveAndCareer: Page = () => (
   <ContentPage
-    eyebrow="育休を考えるとき"
-    title="育休は取る価値。長さは家族で"
+    eyebrow="キャリアと育休"
+    title="育休を取り大切な時間を過ごす"
     illustration={illusPapaWork}
     illuWidth={270}
     list={
       <>
-        <li>収入・昇進への不安は本物。でも1〜6ヶ月は取る価値が大きい</li>
-        <li>1年はキャリアに響きやすい。会社・人によって差はある</li>
-        <li>育休前に貢献し、「待ってるね」と送り出してもらえると戻りやすい</li>
-        <li>キャリアも大事。金銭面とセットで家族で決める</li>
+        <li>収入・昇進の不安はある。少しでもベビーと過ごして</li>
+        <li>1年はキャリアに響きやすい。オススメは1〜6ヶ月かな？</li>
+        <li>キャリアも本当に大事。金銭面の安心は子育ての安心に繋がる</li>
+        <li>育休前に職場に貢献し、「待ってるね」と好意的に送り出してもらえるように</li>
       </>
     }
   />
@@ -517,18 +537,21 @@ const Closing: Page = () => (
       color: 'var(--osd-text)',
       display: 'flex',
       flexDirection: 'column',
-      justifyContent: 'center',
+      justifyContent: 'space-between',
       alignItems: 'center',
       textAlign: 'center',
       padding: pad,
+      paddingBottom: 100,
     }}
   >
     <AlbumFrame />
     <DoodleDecor />
     <div
       style={{
+        flex: 1,
         display: 'flex',
         flexDirection: 'column',
+        justifyContent: 'center',
         alignItems: 'center',
         ...aboveDecor,
       }}
@@ -556,25 +579,11 @@ const Closing: Page = () => (
           lineHeight: 1.2,
         }}
       >
-        大変だけど、
-        <br />
-        一緒に頑張りましょう
+        大変だけど幸せすぎるので、<br />皆で頑張りましょう！
       </h2>
-      <p style={{ fontSize: 36, color: muted, margin: 0, lineHeight: 1.55 }}>
-        質問・感想・自分の話も、ぜひ聞かせてください
-      </p>
-      <p
-        style={{
-          marginTop: 40,
-          fontSize: 30,
-          color: muted,
-          padding: '20px 40px',
-          background: surface,
-          borderRadius: 'var(--osd-radius)',
-        }}
-      >
-        エピソードの詳細 → note
-      </p>
+    </div>
+    <div style={aboveDecor}>
+      <QrRow style={{ justifyContent: 'center' }} />
     </div>
     <PageFooter />
   </div>
