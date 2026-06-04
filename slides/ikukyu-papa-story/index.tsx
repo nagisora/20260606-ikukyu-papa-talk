@@ -123,22 +123,29 @@ const DoodleDecor = () => (
   </>
 );
 
-const qrImgStyle: CSSProperties = { width: 180, height: 180, display: 'block', borderRadius: 8 };
-const qrCaptionStyle: CSSProperties = { fontSize: 28, color: muted, margin: 0, fontWeight: 600 };
-
-const MaterialQrRow = ({ style }: { style?: CSSProperties }) => (
+const QrRow = ({ style }: { style?: CSSProperties }) => (
   <div style={{ display: 'flex', gap: 550, alignItems: 'flex-start', ...style }}>
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 12 }}>
-      <img src={qrNote} alt="子育てnote" draggable={false} style={qrImgStyle} />
-      <p style={qrCaptionStyle}>
+      <img
+        src={qrNote}
+        alt="子育てnote"
+        draggable={false}
+        style={{ width: 180, height: 180, display: 'block', borderRadius: 8 }}
+      />
+      <p style={{ fontSize: 28, color: muted, margin: 0, fontWeight: 600 }}>
         子育て体験note
         <br />
-        {' （なぎそら）'}
+        （なぎそら）
       </p>
     </div>
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 12 }}>
-      <img src={qrSlide} alt="本日の資料" draggable={false} style={qrImgStyle} />
-      <p style={qrCaptionStyle}>本日の資料</p>
+      <img
+        src={qrSlide}
+        alt="本日の資料"
+        draggable={false}
+        style={{ width: 180, height: 180, display: 'block', borderRadius: 8 }}
+      />
+      <p style={{ fontSize: 28, color: muted, margin: 0, fontWeight: 600 }}>本日の資料</p>
     </div>
   </div>
 );
@@ -335,7 +342,7 @@ const Cover: Page = () => (
             良かったら私が書き溜めた「子育て体験note」などご覧ください
           </p>
         </div>
-        <MaterialQrRow style={{ transform: 'translateX(-80px)' }} />
+        <QrRow style={{ transform: 'translateX(-80px)' }} />
       </div>
     </div>
     <div
@@ -497,7 +504,7 @@ const RestAndSupport: Page = () => (
     list={
       <>
         <li>イライラ・しんどさの正体は、だいたい疲れと睡眠不足</li>
-        <li>公的支援：子育て拠点、一時預かり、のびサポ、誰でも通園、<br />{'　保健センター、 なごやMommy Care、定住促進住宅'}</li>
+        <li>公的支援：子育て拠点、一時預かり、のびサポ、誰でも通園、<br />　保健センター、 なごやMommy Care、定住促進住宅</li>
         <li>オススメは「子育て拠点」。〜7ヶ月：恵方の家、8ヶ月〜：こころと</li>
         <li>休むことに罪悪感を持たない、悩みは小さいうちに早めに相談する</li>
       </>
@@ -575,7 +582,9 @@ const Closing: Page = () => (
         大変だけど幸せすぎるので、<br />皆で頑張りましょう！
       </h2>
     </div>
-    <MaterialQrRow style={{ justifyContent: 'center', ...aboveDecor }} />
+    <div style={aboveDecor}>
+      <QrRow style={{ justifyContent: 'center' }} />
+    </div>
     <PageFooter />
   </div>
 );
