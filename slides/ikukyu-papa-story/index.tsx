@@ -503,7 +503,10 @@ const RestAndSupport: Page = () => (
     illuWidth={280}
     list={
       <>
-        <li>イライラ・しんどさの正体は、だいたい疲れと睡眠不足</li>
+        <li>
+          イライラ・しんどさの正体は、だいたい
+          <span style={{ fontWeight: 800 }}>疲れと睡眠不足</span>
+        </li>
         <li>公的支援：子育て拠点、一時預かり、のびサポ、誰でも通園、<br />　保健センター、 なごやMommy Care、定住促進住宅</li>
         <li>オススメは「子育て拠点」。〜7ヶ月：恵方の家、8ヶ月〜：こころと</li>
         <li>休むことに罪悪感を持たない、悩みは小さいうちに早めに相談する</li>
@@ -515,12 +518,15 @@ const RestAndSupport: Page = () => (
 const LeaveAndCareer: Page = () => (
   <ContentPage
     eyebrow="キャリアと育休"
-    title="育休を取り大切な時間を過ごす"
+    title="育休で人生の大切な時間を過ごす"
     illustration={illusPapaWork}
     illuWidth={270}
     list={
       <>
-        <li>収入・昇進の不安はある。少しでもベビーと過ごして</li>
+        <li>
+          収入・昇進の不安はある。
+          <span style={{ fontWeight: 800 }}>少しでもベビーと過ごして</span>
+        </li>
         <li>1年はキャリアに響きやすい。オススメは1〜6ヶ月かな？</li>
         <li>キャリアも本当に大事。金銭面の安心は子育ての安心に繋がる</li>
         <li>育休前に職場に貢献し、「待ってるね」と好意的に送り出してもらえるように</li>
