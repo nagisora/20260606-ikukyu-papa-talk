@@ -14,8 +14,12 @@ import qrNote from './assets/qr-note.png';
 import qrSlide from './assets/qr-slide.png';
 
 export const notes: (string | undefined)[] = [
-  '- 私が変なこと言っていたら、経験者の方はツッコミをお願いします！',
-  `今日はこんな感じのことをお伝えできればと思っています。
+  `育休を取得したパパの話をしていきます。よろしくお願いいたします！
+
+- 私が変なこと言っていたら、経験者の方はツッコミをお願いします！`,
+  `男性ばかりなので、最初に結論をもってきました。
+
+今日はこんな感じのことをお伝えできればと思っています。
 
 - 幸せなこと：存在が可愛い、純粋な笑顔、成長に感動する、「子どもいらない」と言っていたパパも今ではデレデレ
 - 大変なこと：夫婦で育休を取って、何事もなく上手くいったという話はほとんど聞いたことがない`,
@@ -438,9 +442,7 @@ const SelfIntro: Page = () => (
     list={
       <>
         <li>ゆわちゃんパパ、たまきじゅんや、なぎそら。ずっと御器所</li>
-        <li>
-          40歳、アルバイト（プログラマー ）、幼稚園の事務員を2年
-        </li>
+        <li>40歳、アルバイト（プログラマー ）、家事担当、幼稚園の事務員を2年</li>
         <li>妻 29歳・フルタイム（福祉系）／ 娘 1歳1ヶ月（5月産まれ）</li>
         <li>パパ・ママの2人で、育休をそれぞれ1年取得</li>
         <li>
@@ -478,7 +480,7 @@ const StoryThroughTwoMonths: Page = () => (
 const CoupleAtThreeMonths: Page = () => (
   <ContentPage
     eyebrow="うちの話・後半"
-    title="3ヶ月頃：夫婦間トラブルが頻発"
+    title="3ヶ月頃：夫婦間トラブルが勃発"
     illustration={illusFamily}
     illuWidth={260}
     listTop={
@@ -503,7 +505,7 @@ const RestAndSupport: Page = () => (
     illuWidth={280}
     list={
       <>
-        <li>イライラ・しんどさの正体は、だいたい疲れと睡眠不足</li>
+        <li>イライラ・しんどさの正体は、だいたい<span style={{ fontWeight: 800 }}>疲れと睡眠不足</span></li>
         <li>公的支援：子育て拠点、一時預かり、のびサポ、誰でも通園、<br />　保健センター、 なごやMommy Care、定住促進住宅</li>
         <li>オススメは「子育て拠点」。〜7ヶ月：恵方の家、8ヶ月〜：こころと</li>
         <li>休むことに罪悪感を持たない、悩みは小さいうちに早めに相談する</li>
@@ -515,12 +517,12 @@ const RestAndSupport: Page = () => (
 const LeaveAndCareer: Page = () => (
   <ContentPage
     eyebrow="キャリアと育休"
-    title="育休を取り大切な時間を過ごす"
+    title="育休で人生の大切な時間を過ごす"
     illustration={illusPapaWork}
     illuWidth={270}
     list={
       <>
-        <li>収入・昇進の不安はある。少しでもベビーと過ごして</li>
+        <li>収入・昇進の不安はある。<span style={{ fontWeight: 800 }}>少しでもベビーと過ごして</span></li>
         <li>1年はキャリアに響きやすい。オススメは1〜6ヶ月かな？</li>
         <li>キャリアも本当に大事。金銭面の安心は子育ての安心に繋がる</li>
         <li>育休前に職場に貢献し、「待ってるね」と好意的に送り出してもらえるように</li>
